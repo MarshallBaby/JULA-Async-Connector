@@ -1,0 +1,12 @@
+version: "2"
+services:
+  jdk:
+    image: maven:3.9.6-amazoncorretto-21-debian
+    volumes:
+      - ${PWD}:${PWD}
+    working_dir: ${PWD}
+
+  mvn:
+    extends:
+      service: jdk
+    entrypoint:  mvn -T 1C

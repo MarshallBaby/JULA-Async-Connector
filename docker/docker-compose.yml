@@ -1,0 +1,13 @@
+version: "2"
+services:
+  app:
+    extends:
+      file: docker-compose.build.yml
+      service: mvn
+    container_name: JULA-Async-Connector
+    ports:
+      - "8080:8080"
+    mem_limit: 300m
+    mem_reservation: 250m
+    command: spring-boot:run
+    env_file: .env
