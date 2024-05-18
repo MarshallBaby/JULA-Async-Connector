@@ -7,7 +7,7 @@ services:
     container_name: JULA-Async-Connector
     ports:
       - "8080:8080"
-    mem_limit: 300m
-    mem_reservation: 250m
+    mem_limit: 500m
+    mem_reservation: 450m
     command: spring-boot:run
     env_file: .env
