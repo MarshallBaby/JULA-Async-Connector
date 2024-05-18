@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="create-user-table" author="MarshallBaby">
+        <createTable tableName="task">
+            <column name="task_id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="request_payload" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="response_payload" type="text"/>
+            <column name="task_status" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creation_timestamp" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
