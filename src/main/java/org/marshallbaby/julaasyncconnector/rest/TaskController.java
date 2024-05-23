@@ -35,7 +35,7 @@ public class TaskController {
     @GetMapping
     public ResponseEntity<Task> getWaitingTask() {
 
-        log.info("Getting waiting task");
+        log.info("Getting waiting task.");
         Task task = taskService.getWaitingTask();
         return Objects.isNull(task) ?
                 NOT_FOUND_RESPONSE_ENTITY :
@@ -45,7 +45,7 @@ public class TaskController {
     @GetMapping("/{taskId}")
     public Response getResponse(@PathVariable UUID taskId) {
 
-        log.info("Fetching response for task [{}].", taskId);
+        log.info("Getting response for task [{}].", taskId);
         return taskService.fetchResponse(taskId);
     }
 
